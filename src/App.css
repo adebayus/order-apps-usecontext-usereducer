@@ -1,38 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Lobster&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* @font-face{
+  font-family: 'Lobster', cursive;
+  src: url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+}
+
+@font-face{
+  font-family: 'Lobster', cursive;
+  src: url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+} */
+
+html,
+body,
+#root {
+  font-family:  'Caveat', cursive;
+  background-color: var(--TotemPole);
+  color: #dcdbe1;
+}
+
+
+
+.reset{
+  margin: 0 ;
+  padding: 0;
+}
+
+:root{
+  --BalticSea : #1F1E23;
+  --TotemPole : #A40807;
+  --Ronchi : #F0C659;
+  --SmokeGray : #dcdbe1;
+}
+
 .App {
-  text-align: center;
+  border-radius: 10px;
+  background-color: var(--BalticSea);
+  /* width: 100%px; */
+  height: auto;
+  margin: 150px auto;
+  padding: 2px;
+  /* display: grid; */
+  /* grid-template-rows: auto auto; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.menu-title{
+  margin: 30px 0px ;
+  font-size: 60px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu-list{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.menu-list-button{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  /* flex-direction: column; */
+  width: 30%;
 }
 
-.App-link {
-  color: #61dafb;
+.menu-list-button .btn-light{
+  background-color: var(--SmokeGray);
+  border-color: var(--SmokeGray);
+}
+.menu-list-button .button{
+  margin: 0 2px;
+  padding: 0;
+
+  width: 30px;
+  height: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menu-list-detail{
+  word-wrap: break-word;
+  width: 70%;
 }
+.menu-list-detail p{
+  margin: 0;
+  font-weight: 600;
+  font-family: 'Caveat', cursive;
+}
+
+
+.list-order p
+{
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+} 
+.list-order h2{
+  margin: 0;
+}
+
