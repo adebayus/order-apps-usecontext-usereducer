@@ -4,7 +4,7 @@ import Data from '../data/Data'
 import { cartContext } from '../context/Context'
 
 function Menu() {
-    const { dispatch } = useContext(cartContext)
+    const { state,dispatch } = useContext(cartContext)
     return (
         <div>
             <h1 className="text-center menu-title text-uppercase" >Menu</h1>
@@ -17,11 +17,13 @@ function Menu() {
                           <p> &#36; {food.price} </p>
                         </div>
                         <div className="menu-list-button">
-                          <Button variant="light" className="button" onClick={ () => dispatch({ type: "increment", payload : food })}>
-                              +
-                          </Button>
-                          <Button variant="light" className="button" >
+                          
+                          <Button variant="light" className="button" onClick={ () => dispatch({ type: "decrement", payload : food })} >
                               -
+                          </Button>
+
+                          <Button variant="light" className="button" onClick={ () => dispatch({ type: "increment", payload : food })} >
+                              +
                           </Button>
                         </div>
                       </Col>

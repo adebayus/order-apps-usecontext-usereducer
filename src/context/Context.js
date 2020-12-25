@@ -11,7 +11,7 @@ let Reducer = (state,action) => {
     switch (action.type) {
       case "increment":
         if (!state.cart.length) {
-            // return "true"
+            // return "true" 
           return addToEmpetyCart(state, action.payload)
         
         } else {
@@ -21,10 +21,51 @@ let Reducer = (state,action) => {
                 return addToCart(state,action.payload)
             }
         }
+        case "decrement":
+            if(!state.cart.length){
+                return{
+                    cart : [],
+                }
+            }else{
+                if (state.cart.some (x => x.id === action.payload.id )){
+                    return reduceQuantity(state, action.payload)
+                }
+                console.log("decrement else else cart")
+                return {
+                    ...state
+                }
+               
+            }
 
       default:
         return;
     }
+}
+
+function reduceQuantity(state, foodMenu){
+    const cart = [...state.cart];
+    const indexFood = cart.findIndex( x => x.id === foodMenu.id )
+    const decrementQuanity = cart[indexFood].quantity - 1;
+    
+    if(decrementQuanity != 0){
+       
+        cart[indexFood] = {
+          ...foodMenu,
+          quantity: decrementQuanity,
+        };
+        return {
+          cart: [...cart],
+        };  
+
+    }else{
+        const deleteIt = state.cart.filter(x => x.id !== foodMenu.id)
+        console.log(deleteIt, " delete")
+        return {
+            cart : [ ...deleteIt ]
+        }
+    }
+    
+
 }
 
 function addQuantity(state, foodMenu){

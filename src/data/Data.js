@@ -9,7 +9,7 @@ const Data = [
     },
     {
         id: 2,
-        name: "Taxo",
+        name: "Taco",
         price: "1",
         tag: "food"
     },
